@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;400&display=swap" rel="stylesheet">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+    <!-- VUE FRAMEWORK -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+    <!--  Main CSS File -->
+    <link href="./assets/style.css" rel="stylesheet">
+
+    <!--  Main JS File -->
+    <script src="./assets/main.js" defer></script>
+
+    <title>Ce Fazzu</title>
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <div id="app">            
+            <div class="container">
+                <main class="w-75 mx-auto">                    
+                        <header class="row justify-content-between align-items-center my-5">
+                            <div id="logo-container" class="d-flex align-items-end col-4">
+                                <img src="/assets/img/logo.png" alt="logo" class="img-fluid">
+                                <h1 class="fw-bold text-uppercase">Ce Fazzu</h1>
+                            </div>
+                            <div class="input-group w-50 col-8">
+                                <input type="text" class="form-control bg-color" v-model="newTasks" @keyup.enter="addNewTasks">
+                                <div class="input-group-append">
+                                    <button class="btn my-btn-success btn-success" type="button" @click="addNewTasks">Add
+                                        task</button>
+                                </div>
+                            </div>
+                        </header>
+                        <div id="todo-container">
+                            <ul v-if="tasks.length" class="list-group my-5">
+                                <li class="list-group-item bg-color d-flex justify-content-between align-items-center" v-for="(task, index) in tasks">
+                                    <div role="button" @click="toggleTasksCheck(index)" class="flex-grow-1">
+                                        <i class="far" :class="task.done === true ? 'fa-check-square' : 'fa-square'"></i>
+                                        <span :class="{done : task.done}">{{task.text}}</span>
+                                    </div>
+                                    <button type="button" class="btn-close my-btn-close" @click="deleteTask(index)"></button>
+                                </li>
+                            </ul>
+                            <h3 v-else class="text-center"> Non ci sono altre task nella tua lista.</h3>
+                            <div class="actions text-center">
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <button type="button" @click="marAllAsRead" class="btn btn-light">Segna come letti</button>
+                                    <button type="button" @click="marAllAsUnread" class="btn btn-warning my-btn-warning">Segna come non
+                                        letti</button>
+                                    <button type="button" @click="deleteAllTasks" class="btn btn-dark">Cancella tutto</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

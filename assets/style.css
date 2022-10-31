@@ -1,0 +1,71 @@
+/* Generics */
+body {
+    background-color: #0f0e17;
+    font-family: 'Kanit', sans-serif;
+    font-size: 18px;
+    color: #0f0e17;
+}
+
+header {
+    background-color: #0f0e17;
+    height: 64px;
+    color: #edf2f4;
+}
+
+header img{
+    width: 64px;
+}
+
+.form-control{
+    height: 44px;
+}
+
+.bg-color{
+    background-color: #fffffe;
+}
+
+.my-btn-success {
+    background-color: #ff8906!important;
+    color: #0f0e17;
+    border: none;
+    padding: 10px;
+    border-radius: 0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+.my-btn-success:hover,
+.my-btn-success:visited,
+.my-btn-success:active {
+    background-color: #f25f4c!important;
+}
+
+.my-btn-close {
+    padding: 6px;
+    background-color: #ff8906;
+    font-size: 10px;
+}
+
+.my-btn-warning {
+    background-color: #ff8906!important;
+    border: none;
+}
+
+.my-btn-success:focus {
+    background-color: #f25f4c!important;
+}
+
+i {
+    margin-right: 1rem;
+    font-size: 1rem;
+}
+
+i.fa-check-square {
+    color: #e53170;
+}
+
+.done {
+    color: #e53170;
+    text-decoration: line-through;
+}
