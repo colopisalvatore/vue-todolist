@@ -1,15 +1,39 @@
 /* Generics */
 body {
+    width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        user-select: none;
     background-color: #0f0e17;
     font-family: 'Kanit', sans-serif;
     font-size: 18px;
     color: #0f0e17;
 }
 
+.my-container{
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+}
+
+.screen__view::-webkit-scrollbar {
+    display: none;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    background: #000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
 header {
     background-color: #0f0e17;
     height: 64px;
-    color: #edf2f4;
+    color: #ecf1f3;
 }
 
 header img{
@@ -22,6 +46,10 @@ header img{
 
 .bg-color{
     background-color: #fffffe;
+}
+
+.btn{
+    padding: 5px;
 }
 
 .my-btn-success {

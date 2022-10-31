@@ -29,7 +29,6 @@ createApp({
 				{ text: 'Fare un viaggio avventura spericolato', done: false },
 				{ text: 'Visitare l’Europa con l’Interrail', done: true },
 				{ text: "Imparare lo spagnolo", done: false },
-				{ text: 'Vedere l’aurora boreale', done: false },
             ]			
         }
     },
